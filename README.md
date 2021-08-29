@@ -2,6 +2,8 @@
 
 A construção de uma interface de e-commerce de games utilizando [ReactJS](https://pt-br.reactjs.org/)
 
+> Acesso Online [aqui](https://desafio-e-commerce.vercel.app/)
+
 ## Imagens
 
 ![index](imgs/index.png)

@@ -79,9 +79,13 @@ export async function getServerSideProps(context) {
   }
   let product = []
 
+  const dev = process.env.NODE_ENV !== 'production'
+  const url = dev
+    ? 'http://localhost:3000'
+    : 'https://desafio-e-commerce.vercel.app'
   try {
-    const data = await fetch('http://localhost:3000/data/products.json').then(
-      res => res.json()
+    const data = await fetch(`${url}/data/products.json`).then(res =>
+      res.json()
     )
     product = getProduct(context.params.id, data)
   } catch (err) {

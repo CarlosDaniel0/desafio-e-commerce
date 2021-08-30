@@ -27,8 +27,14 @@ const Index = () => {
    */
   function sortBy(attr) {
     const sorted = products.data.sort((after, before) => {
-      if (products.sorted.by == 'asc') return after[attr] < before[attr]
-      if (products.sorted.by == 'desc') return after[attr] > before[attr]
+      if (products.sorted.by == 'asc') {
+        if (after[attr] < before[attr]) return 1
+        return -1
+      }
+      if (products.sorted.by == 'desc') {
+        if (after[attr] > before[attr]) return 1
+        return -1
+      }
     })
     setProducts(old => ({
       ...old,
